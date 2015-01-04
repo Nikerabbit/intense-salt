@@ -1,0 +1,85 @@
+---
+bootstrap.mlockall: true
+cluster.name: intense
+script:
+  disable_dynamic: false
+  groovy:
+    sandbox:
+      class_whitelist:
+        - java.util.Date
+        - java.util.Map
+        - java.util.List
+        - java.util.Set
+        - java.util.ArrayList
+        - java.util.Arrays
+        - java.util.HashMap
+        - java.util.HashSet
+        - java.util.UUID
+        - java.math.BigDecimal
+        - org.joda.time.DateTime
+        - org.joda.time.DateTimeZone
+        - org.elasticsearch.common.joda.time.DateTime
+        - org.elasticsearch.common.joda.time.DateTimeZone
+        - java.util.Locale
+        - org.apache.lucene.util.automaton.RegExp
+        - org.apache.lucene.util.automaton.CharacterRunAutomaton
+        - org.apache.lucene.search.spell.LevensteinDistance
+      package_whitelist:
+        - java.util
+        - java.lang
+        - org.joda.time
+        - org.elasticsearch.common.joda.time
+        - org.apache.lucene.util.automaton
+        - org.apache.lucene.search.spell
+      receiver_whitelist:
+        - java.lang.Math
+        - java.lang.Integer
+        - "[I"
+        - "[[I"
+        - "[[[I"
+        - java.lang.Float
+        - "[F"
+        - "[[F"
+        - "[[[F"
+        - java.lang.Double
+        - "[D"
+        - "[[D"
+        - "[[[D"
+        - java.lang.Long
+        - "[J"
+        - "[[J"
+        - "[[[J"
+        - java.lang.Short
+        - "[S"
+        - "[[S"
+        - "[[[S"
+        - java.lang.Character
+        - "[C"
+        - "[[C"
+        - "[[[C"
+        - java.lang.Byte
+        - "[B"
+        - "[[B"
+        - "[[[B"
+        - java.lang.Boolean
+        - "[Z"
+        - "[[Z"
+        - "[[[Z"
+        - java.math.BigDecimal
+        - java.util.Arrays
+        - java.util.Date
+        - java.util.List
+        - java.util.Map
+        - java.util.Set
+        - java.lang.Object
+        - org.joda.time.DateTime
+        - org.joda.time.DateTimeUtils
+        - org.joda.time.DateTimeZone
+        - org.joda.time.Instant
+        - org.elasticsearch.common.joda.time.DateTime
+        - org.elasticsearch.common.joda.time.DateTimeUtils
+        - org.elasticsearch.common.joda.time.DateTimeZone
+        - org.elasticsearch.common.joda.time.Instant
+        - org.apache.lucene.util.automaton.RegExp
+        - org.apache.lucene.util.automaton.CharacterRunAutomaton
+        - org.apache.lucene.search.spell.LevensteinDistance

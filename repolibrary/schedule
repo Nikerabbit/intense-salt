@@ -1,0 +1,4 @@
+#!/bin/sh
+
+php /srv/mediawiki/targets/deployment/extensions/RepoLibrary/maintenance/queue-updates.php \
+	>> /www/intense.wmflabs.org/logs/repolibrary 2>&1

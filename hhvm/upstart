@@ -1,0 +1,15 @@
+description "HHVM fastcgi server"
+
+start on (local-filesystems and net-device-up IFACE!=lo)
+
+pre-start script
+  mkdir -p -m0755 /run/hhvm /var/log/hhvm
+  chown -R www-data:www-data /run/hhvm /var/log/hhvm
+end script
+
+exec /usr/bin/hhvm --config /etc/hhvm/server.ini --mode server --user www-data >> /var/log/hhvm/error.log 2>&1
+
+limit nofile 65536 65536
+limit stack 67108864 unlimited
+
+respawn

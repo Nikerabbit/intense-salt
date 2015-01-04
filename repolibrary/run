@@ -1,0 +1,5 @@
+#!/bin/sh
+
+php /srv/mediawiki/targets/production/maintenance/runJobs.php \
+	--type 'RepoLibrary\scheduler\MediaWikiJob' \
+	>> /var/log/repolibrary 2>&1

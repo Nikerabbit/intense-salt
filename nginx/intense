@@ -1,0 +1,28 @@
+server {
+	listen 80 default_server;
+
+	server_name intense.wmflabs.org;
+	root /www/intense.wmflabs.org/docroot;
+
+	location = / {
+		rewrite ^ /wiki/Main_Page;
+	}
+
+	location ~ ^/wiki/(.*)$ {
+		rewrite ^/wiki/(.*)$ /w/index.php?title=$1&$args;
+	}
+
+	location ~ ^/(w|development)/(index|load|api)\.php$ {
+		fastcgi_pass php;
+		include fastcgi.conf;
+	}
+
+	# Deny access to all php files except those above
+	location ~* \.php$ {
+		deny all;
+	}
+
+	location ~* \.(png|jpg|jpeg|gif|ico|svg|woff|woff2|eot|ttf|webp)$ {
+		expires 2M;
+	}
+}
