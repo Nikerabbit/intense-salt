@@ -12,3 +12,7 @@ base:
   'fqdn:*elasticsearch*':
     - match: grain
     - elasticsearch
+
+  'fqdn:*salt*':
+    - match: grain
+    - salt
