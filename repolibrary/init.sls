@@ -28,4 +28,4 @@ repolibrary:
   cron.present:
     - user: repolibrary
     - minute: 42
-    - identifier: repolibrary-queue
+    - identifier: repolibrary-schedule

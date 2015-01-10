@@ -1,4 +1,0 @@
-#!/bin/sh
-
-php /srv/mediawiki/targets/production/extensions/RepoLibrary/maintenance/queue-updates.php \
-	>> /var/log/repolibrary 2>&1
