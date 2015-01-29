@@ -5,4 +5,4 @@
   cron.present:
     - identifier: intense-run
     - user: www-data
-    - minute: '*/5'
+    - minute: '*/1'
